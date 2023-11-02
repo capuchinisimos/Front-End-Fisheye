@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/photographer.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
+      rel="stylesheet">
+    <title>Fisheye - photographe </title>
+  </head>
+  <body>
+
+    <header role="banner">
+      <a
+        role="lien"
+        href="../index.html"
+        aria-label="lien pour retourner à la page d'accueil">
+        <img
+          src="../assets/images/logo.png" class="logo" alt="logo Fisheye" />
+      </a>
+    </header>
+
+    <main id="main">
+      <div class="photograph-header">
+
+        <!--Profil-->
+
+        <section class="profil">
+          <div class="photograph-header" id="photographProfile"></div>
+          <div class="headerPhotographer"></div>
+
+          <div class="LikeCounter"></div>
+        </section>
+
+        <!--Filters-->
+
+        <section class="filter">
+          <div class="filter_option">
+            <label for="selector-modal-type-picture">Trier par</label>
+            <select
+              id="selector-modal-type-picture"
+              tabindex="4"
+              aria-label="selection">
+              <option value="popularity">Popularité</option>
+              <option value="date">Date</option>
+              <option value="title">Title</option>
+            </select>
+          </div>
+        </section>
+
+        <!--Portfoio-->
+
+        <section class="portfolio">
+          <div id="photographerPageGallery"></div>
+        </section>
+
+      </div>
+    </main>
+
+    <!--Lightbox-->
+
+    <div id="lightbox">
+      <button class="arrow arrow-left" id="arrow-left" tabindex="5"
+        aria-label="gauche">
+        <span class="fa-solid fa-angle-left"></span>
+      </button>
+      <div>
+        <div id="lightboxMedia"></div>
+      </div>
+      <div class="arrowRightAndClose">
+        <button class="arrow arrow-right" id="arrow-right" tabindex="6"
+          aria-label="droite">
+          <span class="fa-solid fa-angle-right"></span>
+
+        </button>
+        <button class="close-button" tabindex="6" aria-label="fermer">
+          <span class="fa-solid fa-x"></span>
+        </button>
+      </div>
+    </div>
+
+    <script src="/scripts/pages/photographer.js"></script>
+    <script src="/scripts/utils/contactForm.js"></script>
+    <script src="/scripts/templates/photographer.js"></script>
+    <script src="/scripts/pages/media.js"></script>
+
+  </body>
+</html>
