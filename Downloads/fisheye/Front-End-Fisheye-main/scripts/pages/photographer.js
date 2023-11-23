@@ -1,7 +1,6 @@
-// Sélection de la balise qui va contenir la galerie de photos sur la page du photographe
 const photographerPageGallery = document.getElementById(
   "photographerPageGallery"
-);
+);// Sélection de la balise qui va contenir la galerie de photos sur la page du photographe
 
 // Fonction asynchrone pour récupérer les données des photographes et des médias depuis un fichier JSON
 
@@ -111,47 +110,17 @@ class PhotographerFactory {
     return `
     <div class="photographProfile_detail" tabindex="2">
     <h1 class="titlePhotographe">${this.name}</h1>
-    <p>${this.city}, ${this.country}</p>
+   <div class="photographerLocation" tabindex="3"> <p>${this.city}, ${this.country}</p></div>
     <p>${this.tagline}</p>
 </div>
-<button class="contact_button" id="contact_modal" tabindex="3">Contactez-moi</button>
-<div class="photographProfile_img" tabindex="4">
-    <img src='./assets/photographers/${this.portrait}'/>
+<button class="contact_button" id="contact_modal" tabindex="4">Contactez-moi</button>
+<div class="photographProfile_img" tabindex="5">
+    <img src='./assets/photographers/${this.portrait}' alt=""/>
 </div>
 
  
         
-        <div  class="modal" role="dialog" aria-modal="true">
-        <div class="modal-content">
-            <header class="modal-header">
-                <h1 class="modal-header-title">
-                    <span>Contactez-moi</span>
-                    </br>
-                    <span>${this.name}</span>
-                </h1>
-                <span class="close"><i class="fa-solid fa-x"></i></span>
-            </header>
-            <form>
-                <div>
-                    <label for="firstname">Prénom</label>
-                    <input type="text" name="firstname" tabindex="3" id="firstname" required>
-                </div>
-                <div>
-                    <label for="lastname">Nom</label>
-                    <input type="text" name="lastname" tabindex="3" id="lastname" required>
-                </div>
-                <div>
-                    <label for="email">Email</label>
-                    <input type="email" name="lastname" tabindex="3" id="email" required>
-                </div>
-                <div>
-                    <label for="message">Votre message</label>
-                    <input tabindex="3" id="message">
-                </div>
-            </form>
-            <button type="submit" class="modal-button" id="form-submit-button" tabindex="3">Envoyer</button>
-        </div>
-    </div>
+   
     `;
 
 
@@ -160,6 +129,15 @@ class PhotographerFactory {
   }
 
 }
+
+
+
+
+
+/*back.setAttribute('aria-hidden', true);
+
+    modal.setAttribute('aria-hidden', false);*/
+
 // Fonction pour initialiser la lightbox (galerie d'images en plein écran)
 const lightbox = () => {
   console.log('lightbox');
@@ -421,6 +399,7 @@ const init = async () => {
   );
   // Création d'un objet Photographe et insertion de l'en-tête dans la page
   const Photographer = new PhotographerFactory(searchPhotographer[0]);
+  document.querySelector("#name_header").innerText = Photographer.name;
   const getHeaderPhotographer = Photographer.getHeaderPhotographer();
   add.innerHTML += getHeaderPhotographer;
   // faire une fonction pour appeller ceci

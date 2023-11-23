@@ -3,9 +3,15 @@ function installDisplayModal() { // eslint-disable-line
 
     displayModal.addEventListener("click", () => {
         console.log("test");
+
         const modal = document.querySelector(".modal");
+        modal.style.display = "block";
+        document.querySelector('#main').setAttribute('aria-hidden', 'true');
+        modal.setAttribute('aria-hidden', 'false');
+        //document.getElementById("modalheadertitle").focus();
         const closeBtn = document.getElementsByClassName("close")[0];
         const firstNameInput = document.getElementById("firstname");
+        firstNameInput.focus();
         const lastNameInput = document.getElementById("lastname");
         const emailInput = document.getElementById("email");
         const messageInput = document.getElementById("message");
@@ -17,9 +23,11 @@ function installDisplayModal() { // eslint-disable-line
             );
             modal.style.display = "none";
         });
-        modal.style.display = "block";
+
 
         closeBtn.onclick = function () {
+            document.querySelector('#main').setAttribute('aria-hidden', 'false');
+            modal.setAttribute('aria-hidden', 'true');
             modal.style.display = "none";
         };
 
@@ -34,5 +42,7 @@ function installDisplayModal() { // eslint-disable-line
                 modal.style.display = "none";
             }
         });
+        document.getElementById('modalheadertitle').focus();
+        console.log('afficher');
     });
 }
