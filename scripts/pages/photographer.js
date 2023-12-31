@@ -130,14 +130,6 @@ class PhotographerFactory {
 
 }
 
-
-
-
-
-/*back.setAttribute('aria-hidden', true);
-
-    modal.setAttribute('aria-hidden', false);*/
-
 // Fonction pour initialiser la lightbox (galerie d'images en plein écran)
 const lightbox = () => {
   console.log('lightbox');

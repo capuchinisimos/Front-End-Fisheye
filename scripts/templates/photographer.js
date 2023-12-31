@@ -1,8 +1,12 @@
+/* Fonction pour créer le modèle d'un photographe */
 function photographerTemplate(data) {
     const { id, portrait, name, city, country, tagline, price } = data;
 
+    /* Chemin vers l'image du photographe */
     const picture = `./assets/photographers/${portrait}`;
 
+
+    /* Fonction pour créer la carte HTML du photographe */
     function getUserCardDOM(photographer) {
 
 
@@ -33,6 +37,9 @@ function photographerTemplate(data) {
         h3.textContent = city + ", " + country;
         taglineId.textContent = tagline;
         priceId.textContent = price + "€/jour";
+
+
+        /* Assemble la carte du photographe */
         article.appendChild(link);
         link.appendChild(container);
         container.appendChild(img);
@@ -42,8 +49,12 @@ function photographerTemplate(data) {
         article.appendChild(taglineId);
         article.appendChild(priceId);
 
+
+        /* Retourne l'élément 'article' complet */
         return (article);
     }
+
+    /* Retourne un objet contenant les données et la fonction pour générer la carte du photographe */
     return { id, picture, name, city, country, tagline, price, getUserCardDOM }
 }
 

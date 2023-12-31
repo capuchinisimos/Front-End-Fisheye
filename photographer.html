@@ -14,8 +14,8 @@
   <body>
 
     <header>
-      <a href="/Front-End-Fisheye-main/index.html" aria-label="Retour à la page d'accueil">
-        <img src="/Front-End-Fisheye-main/assets/images/logo.png" class="logo"
+      <a href="index.html" aria-label="Retour à la page d'accueil">
+        <img src="assets/images/logo.png" class="logo"
           alt="Fisheye Home Page" tabindex="1">
       </a>
     </header>
@@ -26,15 +26,17 @@
         <section class="profil">
           <div class="photograph-header" id="photographProfile"></div>
           <div class="headerPhotographer"></div>
-          <div class="LikeCounter" tabindex="6"></div>
+          <div class="LikeCounter" ></div>
         </section>
 
         <!-- Filters -->
         <section class="filter">
           <div class="filter_option">
-            <label for="selector-modal-type-picture" tabindex="7">Trier par</label>
+            <label for="selector-modal-type-picture" >Trier par</label>
             <select id="selector-modal-type-picture"
+            tabindex="4"
               aria-label="Sélection du type de tri">
+
               <option value="popularity">Popularité</option>
               <option value="date">Date</option>
               <option value="title">Titre</option>
@@ -87,26 +89,26 @@
 
     <!-- Lightbox -->
     <div id="lightbox" aria-label="Visionneuse d'images" role="dialog">
-      <button class="arrow arrow-left" id="arrow-left"
+      <button class="arrow arrow-left" tabindex="5" id="arrow-left"
         aria-label="Image précédente">
         <span class="fa-solid fa-angle-left"></span>
       </button>
       <div id="lightboxMedia"></div>
       <div class="arrowRightAndClose">
-        <button class="arrow arrow-right" id="arrow-right"
+        <button class="arrow arrow-right" tabindex="6" id="arrow-right"
           aria-label="Image suivante">
           <span class="fa-solid fa-angle-right"></span>
         </button>
-        <button class="close-button" aria-label="Fermer la visionneuse">
+        <button class="close-button" tabindex="6" aria-label="Fermer la visionneuse">
           <span class="fa-solid fa-x"></span>
         </button>
       </div>
     </div>
 
-    <script src="/Front-End-Fisheye-main/scripts/pages/photographer.js"></script>
-    <script src="/Front-End-Fisheye-main/scripts/utils/contactForm.js"></script>
-    <script src="/Front-End-Fisheye-main/scripts/templates/photographer.js"></script>
-    <script src="/Front-End-Fisheye-main/scripts/pages/media.js"></script>
+    <script src="scripts/pages/photographer.js"></script>
+    <script src="scripts/utils/contactForm.js"></script>
+    <script src="scripts/templates/photographer.js"></script>
+    <script src="scripts/pages/media.js"></script>
 
   </body>
 </html>
